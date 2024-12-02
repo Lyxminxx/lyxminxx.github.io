@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terminal</title>
+    <link>/</link>
+    <description>Recent content on Terminal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 02 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why i switched to linux - My linux journey</title>
+      <link>/posts/why-i-switched-to-linux---my-linux-journey/</link>
+      <pubDate>Mon, 02 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/why-i-switched-to-linux---my-linux-journey/</guid>
+      <description>&lt;h2 id=&#34;my-first-install&#34;&gt;My first install&lt;/h2&gt;
+&lt;p&gt;So a few years ago i wanted something new, something that would make the computer exciting again. That&amp;rsquo;s when i learned about linux, i decided that i wanted to install it right away. I asked my dad to burn the usb. I asked for Ubuntu, but my dad laughed and said that Ubuntu is &amp;ldquo;Grandma linux&amp;rdquo;. He then said i should try linux mint. That same night i installed linux mint for the first time.&lt;/p&gt;</description>
+      <content>&lt;h2 id=&#34;my-first-install&#34;&gt;My first install&lt;/h2&gt;
+&lt;p&gt;So a few years ago i wanted something new, something that would make the computer exciting again. That&amp;rsquo;s when i learned about linux, i decided that i wanted to install it right away. I asked my dad to burn the usb. I asked for Ubuntu, but my dad laughed and said that Ubuntu is &amp;ldquo;Grandma linux&amp;rdquo;. He then said i should try linux mint. That same night i installed linux mint for the first time.&lt;/p&gt;
+&lt;h2 id=&#34;how-i-liked-it&#34;&gt;How i liked it&lt;/h2&gt;
+&lt;p&gt;I then had to figure out how to play my games. Back then I only played rocket league, so one lutris install later i had it up and running. Most of the other software i used was nativly on linux, so it was not really a hard challange.&lt;/p&gt;
+&lt;h2 id=&#34;switching-back-and-forth&#34;&gt;Switching back and forth&lt;/h2&gt;
+&lt;p&gt;The next few months i switched back and forth between linux and windows. But whenever i switched to windows for application support, i always missed linux.&lt;/p&gt;
+&lt;h2 id=&#34;arch-linux-my-savior&#34;&gt;Arch linux my savior&lt;/h2&gt;
+&lt;p&gt;After switching back and forth for months i landed on Arch linux. For me it was the perfect distro. It was the first time i didn&amp;rsquo;t miss windows at all. It was also around this time i started hating windows more. At school i had to use windows, and it genuinely bothered me. I missed the tilling from i3. That is the main reason i liked linux. I know there is some kind of application that adds a way to tile in windows, but it doesn&amp;rsquo;t work the same. Like the way i can use a config file to edit things is something i really love.&lt;/p&gt;
+&lt;h2 id=&#34;linux-today&#34;&gt;Linux today&lt;/h2&gt;
+&lt;p&gt;This leads me to today. I am now on Arch Linux and i3wm. I tried so many distros throughout the years, and Iv&amp;rsquo;e always fell back to Arch.
+!&lt;img alt=&#34;Image Description&#34; src=&#34;/images/Pasted%20image%2020241202182116.png&#34;&gt;
+This is how it looks at the moment. Quite beautiful i would say.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
