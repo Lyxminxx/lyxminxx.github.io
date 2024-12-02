@@ -89,6 +89,8 @@ git remote set-url origin https://github.com/Lyxminxx/lyxminxx.github.io.git
 echo "Deploying to GitHub Main..."
 if ! git push -u origin main --force; then
     echo "Failed to push to main branch."
+    git status
+    git log --oneline -n 5
     exit 1
 fi
 
@@ -106,8 +108,6 @@ fi
 if ! git push origin website:website --force; then
     echo "Failed to push to hostinger branch."
     git branch -D website
-    git status
-    git log --oneline -n 5
     exit 1
 fi
 
