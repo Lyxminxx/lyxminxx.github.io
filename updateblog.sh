@@ -84,11 +84,11 @@ else
     git commit -m "$commit_message"
 fi
 
-# Step 7: Push all changes to the main branch
+# Step 7: Push all changes to the master branch
 git remote set-url origin https://github.com/Lyxminxx/lyxminxx.github.io.git
-echo "Deploying to GitHub Main..."
-if ! git push -u origin main --force; then
-    echo "Failed to push to main branch."
+echo "Deploying to GitHub master..."
+if ! git push -u origin master --force; then
+    echo "Failed to push to master branch."
     git status
     git log --oneline -n 5
     exit 1
