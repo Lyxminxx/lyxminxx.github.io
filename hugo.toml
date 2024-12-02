@@ -86,7 +86,3 @@ paginate = 5
           identifier = "Git"
           name = "Git"
           url = "https://github.com/Lyxminxx"
-        [[languages.en.menu.main]]
-          identifier = "About"
-          name = "About"
-          url = "/About.md"
