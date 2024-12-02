@@ -106,6 +106,8 @@ fi
 if ! git push origin website:website --force; then
     echo "Failed to push to hostinger branch."
     git branch -D website
+    git status
+    git log --oneline -n 5
     exit 1
 fi
 
