@@ -85,6 +85,7 @@ else
 fi
 
 # Step 7: Push all changes to the main branch
+git remote set-url origin https://github.com/Lyxminxx/lyxminxx.github.io.git
 echo "Deploying to GitHub Main..."
 if ! git push origin main; then
     echo "Failed to push to main branch."
