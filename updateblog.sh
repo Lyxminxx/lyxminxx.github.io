@@ -10,7 +10,7 @@ sourcePath="/home/lyx/Documents/Obsidian/lyxminx/posts"
 destinationPath="/home/lyx/Documents/lyxblog/content"
 
 # Set GitHub Repo
-myrepo="reponame"
+myrepo="lyxminxx.github.io"
 
 # Check for required commands
 for cmd in git rsync python3 hugo; do
