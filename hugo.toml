@@ -79,8 +79,8 @@ paginate = 5
 
       [languages.en.menu]
         [[languages.en.menu.main]]
-          identifier = "Mastadon"
-          name = "Mastadon"
+          identifier = "Mastodon"
+          name = "Mastodon"
           url = "https://social.linux.pizza/@Madelen"
         [[languages.en.menu.main]]
           identifier = "Git"
