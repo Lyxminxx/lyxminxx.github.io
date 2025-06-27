@@ -32,6 +32,7 @@ nav {
 }
 
 .nav-left a,
+.nav-left label,
 .nav-right a {
   margin-right: 1rem;
   text-decoration: none;
