@@ -1,0 +1,111 @@
+body {
+  background-color: #282a36;
+  color: white;
+  margin: 0;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  overflow: hidden; /* Prevents double scrollbars on some browsers */
+}
+
+h1, h2, h3 {
+  color: #bd93f9;
+}
+
+main {
+  height: calc(100vh - 60px); /* Adjusted to account for navbar height */
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.page {
+  scroll-snap-align: start;
+  height: calc(100vh - 60px); /* Same height as main */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 2px solid #44475a;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  background-color: #282a36;
+  z-index: 10;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a,
+.nav-right a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-right {
+  gap: 1rem;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #bd93f9;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  max-width: 700px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.skill-button {
+  background-color: #343746;
+  border: 1px solid #44475a;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #bd93f9;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  font-size: 1rem;
+}
+
+.skill-button:hover {
+  background-color: #414458;
+  color: white;
+  transform: translateY(-4px);
+}
+
+.skill-button:active {
+  transform: scale(0.98);
+}
+
+.home-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #bd93f9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}

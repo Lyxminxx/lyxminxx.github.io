@@ -1,0 +1,94 @@
+/* General styles */
+body {
+  background-color: #282a36;
+  color: white;
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #bd93f9;
+  margin-top: 0;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 2px solid #44475a;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  background-color: #282a36;
+  z-index: 10;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a,
+.nav-right a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-right {
+  gap: 1rem;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #bd93f9;
+}
+
+/* Page content */
+h1, p {
+  max-width: 700px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+/* Project card */
+.project {
+  background-color: #343746;
+  border: 1px solid #44475a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.project:hover {
+  transform: translateY(-3px);
+}
+
+.project p {
+  margin-bottom: 1rem;
+}
+
+/* Link button */
+.project-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #bd93f9;
+  color: #282a36;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.project-link:hover {
+  background-color: #d6aaff;
+}
