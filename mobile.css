@@ -1,0 +1,55 @@
+@media (max-width: 600px) {
+  nav {
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-left a,
+  .nav-right a,
+  .nav-right label{
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+
+  .page {
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .home-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-button {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .project {
+    padding: 1rem;
+  }
+
+  .project-link {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}

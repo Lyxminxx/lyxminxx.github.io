@@ -92,6 +92,8 @@ def write_blog_index(posts):
   <meta charset="UTF-8">
   <title>Blog</title>
   <link rel="stylesheet" href="blog.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="mobile.css">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
