@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Building My Website: The Good, the Bad, and the Markdown</title>
+  <link rel="stylesheet" href="/template/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/mobile.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+        <label>&lt;/lyx&gt;</label>
+        <a href="/index.html">Home</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/projects.html">Projects</a>
+    </div>
+    <div class="nav-right">
+        <a href="https://github.com/Lyxminxx" class="socials">Github</a>
+        <a href="https://social.linux.pizza/@Madelen" class="socials">Mastodon</a>
+    </div>
+    </nav>
+
+  <main>
+    <article>
+      <h2>Introduction</h2>
+<p>Ever since i got into programming, making websites has been one of my favorite things to do. I learned HTML and CSS the summer before I started school for programming, something I am so glad I did. It started as a simple website with no real reason for existing other than I wanted to try it. I first hosted my website on some random free hosting platform which was a nightmare... I then found GitHub pages, and that tool saved me. From that day I have been tweaking my website and even started from scratch multiple times.</p>
+<h2>My need for a blogging platform</h2>
+<p>Something I've seen a lot of developers have is a blog, somewhere to write about their newest tech passion. I wanted that, a place to share the weird weekly tech obsession. I then saw a video from the YouTuber <a href="https://youtu.be/dnE7c0ELEH8?si=I5EHpd0sCc4a9pt5">NetworkChuck</a> talking about a great way of making your website called <a href="https://gohugo.io/">Hugo</a> a tool that makes making a website easy. He also connected his obsidian to it, so you can write your blog posts in Obsidian. The idea of writing my posts in obsidian and then automatically turning them into html files seemed like a great solution to my problem. I followed his tutorial, and got the system up and running. For a while this was where it sat, I had a few blog posts that i wrote and published and I was pretty happy. </p>
+<h2>Why Hugo wasn't for me</h2>
+<p>There were a few reasons Hugo wasn't the right fit for me. Firstly I don't really care for frameworks that make a bunch of files and I have to follow strict rules for it to work. This way of working doesn't fit me, I like building everything from scratch. That doesn't mean Hugo is bad, just wasn't what I needed. Secondly I switched computers, and that made some issues. I had my entire website folder hosted on GitHub, this should have meant that I could get it up and running again after I switched computers. Sadly I just could not figure it out. It was probably me being dumb, but what can you do.</p>
+<h2>The solution</h2>
+<p>I then thought, what if I just replicated the process of turning markdown into html using python. I could then have a website made solely by me, with a script that makes blogging easy. First let's take a look at my markdown setup.</p>
+<p><img alt="" src="../attachments/Pasted image 20250629230518.png"></p>
+<p>As you can see I have a set of properties, these help me organize things. First is the title, this is used for the title you see before clicking on the blog post as well as at the top of the web page. Then the date is pretty self explanatory this just tells the reader when it was published. The draft checkbox is very important to my workflow. I needed a way of starting blog posts without them being published to early. For me the best solution was just that check mark. As long as that box is ticked, my script will not make it into a html document. Tags is just for me for now, but I might add tags to my blog posts in the future.</p>
+<h2>The script that does it all</h2>
+<p>I used ChatGPT to help me write the script that turns my markdown into HTML. I had a pretty clear idea of what I wanted: ignore drafts, add metadata, apply my styling, and generate clean pages. Honestly, it saved me a lot of time and helped me learn a few things along the way. The final script isn't fancy, but it's <em>mine</em>, and it fits perfectly into how I like to work. So after Mrs. GPT threw together some working code, we where i the clear to build a website around it.</p>
+<h2>The layout and colors</h2>
+<p>If you know me, you will now that my favorite color scheme is Dracula. It was the first scheme I used for a website, I cloned it from a repo. So I knew what I was going for, I grabbed some colors from my sway config and made a simple homepage. This is where I started thinking about what I wanted from my homepage. I love minimalism, so I wanted to keep things simple. I added a little tag line on the main screen. Then a little introduction and showing the technologies I work with. Then I added the blog into it. I added a link to the blog page, which my script generates with the list of posts made. Then I styled the blog posts too. I also added some socials and a projects page.</p>
+<h2>Mobile optimization</h2>
+<p>This was a late addition to my website, I had pretty much finished up everything and let the project sit for a bit. The next day I thought about how I had not checked what it looked like on a smaller screen (spoiler alert it was a mess). Things were smooched together, the blog index was not scaled at all, and the navbar was not functional at all. I decided to write some mobile-specific CSS and just added it as its own file since all my pages could use it. I was as simple as changing some sizes and that pretty much fixed all my issues. Then there was the problem of the blog index page not scaling. When I write HTML I usually use the snippet from vs code. When I use that all the things I need get added, including the line:
+<code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</code>
+This line was just missing from the blog post file since it auto generates using the script. So I just added the line and we were all good.</p>
+<h2>GitHub pages</h2>
+<p>I mentioned earlier how much I love GitHub pages, it makes the process of managing my website so easy while also giving me a free domain and hosting. I like git, it is an amazing way of doing version control. So when I finished my website, I initialized the repo and added the <a href="https://github.com/Lyxminxx/lyxminxx.github.io">remote repo</a>. I could then simply publish it to pages and my website was online!</p>
+<h2>Finial thoughts</h2>
+<p>I love my setup, it takes my favorite way of writing text (Markdown) and connects it to a website. This then is all managed through GitHub. Using this has made blogging a simple task that I hope to do a little more so I can share all my tech adventures and random thoughts.</p>
+    </article>
+  </main>
+</body>
+</html>

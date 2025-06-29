@@ -75,7 +75,7 @@ def convert_posts(template):
             extension_configs={
                 "markdown.extensions.codehilite": {
                     "guess_lang": False,
-                    "noclasses": True  # optional, but avoids needing extra CSS
+                    "noclasses": True 
                 }
             },
             output_format="html5"
