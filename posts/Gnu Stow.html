@@ -25,67 +25,70 @@
   <main>
     <article>
       <h2><strong>Introduction</strong></h2>
-<p>So today i was thinking about backing up my dotfiles. I am going to be using linux at my job so i needed an easy way of getting my system up and running. That is when I discovered an amazing tool, GNU stow.</p>
+<p>So today i was thinking about backing up my dotfiles. I am going to be using linux at my job so i needed an easy way of getting my system up and running. That is when I discovered an amazing tool, GNU stow. </p>
 <h2><strong>What is GNU stow?</strong></h2>
 <p>GNU stow is a symlink farmmanager <a href="https://www.gnu.org/software/stow/">gnu.org</a>. In simpler terms this means it is an easy way of setting up symlinks. This makes it possible to have one folder with all your dotfiles, and with one command you can link them all to the right places on your system.</p>
 <h2><strong>Setting up stow</strong></h2>
 <p>The setup process was simple enough, I made a folder with the name .config and added all files that go into .config on my system into it. Which looks something like this:</p>
-<p>dotfiles/.config/\</p>
-<p>├── alacritty\</p>
-<p>│   ├── alacritty.toml\</p>
-<p>│   └── dracula.toml\</p>
-<p>├── fastfetch\</p>
-<p>│   └── config.jsonc\</p>
-<p>├── fish\</p>
-<p>│   ├── completions\</p>
-<p>│   ├── conf.d\</p>
-<p>│   ├── config.fish\</p>
-<p>│   ├── fish_variables\</p>
-<p>│   └── functions\</p>
-<p>│   └── fish_prompt.fish\</p>
-<p>├── gtk-3.0\</p>
-<p>│   ├── bookmarks\</p>
-<p>│   └── settings.ini\</p>
-<p>├── gtk-4.0\</p>
-<p>│   └── settings.ini\</p>
-<p>├── mako\</p>
-<p>│   └── config\</p>
-<p>├── rofi\</p>
-<p>│   ├── config.rasi\</p>
-<p>│   ├── <a href="http://rofi-exit.sh">rofi-exit.sh</a>\</p>
-<p>│   ├── <a href="http://rofi-wifi-menu.sh">rofi-wifi-menu.sh</a>\</p>
-<p>│   ├── <a href="http://scriptLauncher.sh">scriptLauncher.sh</a>\</p>
-<p>│   └── scripts\</p>
-<p>│   ├── <a href="http://calculator.sh">calculator.sh</a>\</p>
-<p>│   ├── <a href="http://currency.sh">currency.sh</a>\</p>
-<p>│   ├── <a href="http://hardware.sh">hardware.sh</a>\</p>
-<p>│   └── <a href="http://measure.sh">measure.sh</a>\</p>
-<p>├── sway\</p>
-<p>│   ├── autostart\</p>
-<p>│   ├── binds\</p>
-<p>│   ├── config\</p>
-<p>│   ├── scripts\</p>
-<p>│   │   ├── <a href="http://display-autoset.sh">display-autoset.sh</a>\</p>
-<p>│   │   ├── <a href="http://display-menu.sh">display-menu.sh</a>\</p>
-<p>│   │   └── <a href="http://songnotify.sh">songnotify.sh</a>\</p>
-<p>│   ├── theme\</p>
-<p>│   └── windowRules\</p>
-<p>├── swaylock\</p>
-<p>│   ├── config\</p>
-<p>│   └── dracula-wallpaper.svg\</p>
-<p>└── waybar\</p>
-<p>├── config\</p>
-<p>├── scripts\</p>
-<p>│   ├── .env\</p>
-<p>│   ├── .env-example\</p>
-<p>│   ├── <a href="http://batteryNotify.sh">batteryNotify.sh</a>\</p>
-<p>│   ├── <a href="http://brightness.sh">brightness.sh</a>\</p>
-<p>│   ├── <a href="http://notify-toggle.sh">notify-toggle.sh</a>\</p>
-<p>│   ├── open_weather.sh\</p>
-<p>│   ├── swayidle_status.sh\</p>
-<p>│   ├── swayidle_toggle.sh\</p>
-<p>│   └── <a href="http://weather.py">weather.py</a>\</p>
-<p>└── style.css\</p>
+<pre class="codehilite"><code>dotfiles/.config/
+
+├── alacritty/
+│   ├── alacritty.toml
+│   └── dracula.toml
+├── fastfetch/
+│   └── config.jsonc
+├── fish/
+│   ├── completions/
+│   ├── conf.d/
+│   ├── config.fish
+│   ├── fish_variables
+│   └── functions/
+│       └── fish_prompt.fish
+├── gtk-3.0/
+│   ├── bookmarks
+│   └── settings.ini
+├── gtk-4.0/
+│   └── settings.ini
+├── mako/
+│   └── config
+├── rofi/
+│   ├── config.rasi
+│   ├── rofi-exit.sh
+│   ├── rofi-wifi-menu.sh
+│   ├── scriptLauncher.sh
+│   └── scripts/
+│       ├── calculator.sh
+│       ├── currency.sh
+│       ├── hardware.sh
+│       └── measure.sh
+├── sway/
+│   ├── autostart
+│   ├── binds
+│   ├── config
+│   ├── scripts/
+│   │   ├── display-autoset.sh
+│   │   ├── display-menu.sh
+│   │   └── songnotify.sh
+│   ├── theme
+│   └── windowRules
+├── swaylock/
+│   ├── config
+│   └── dracula-wallpaper.svg
+└── waybar/
+    ├── config
+    ├── scripts/
+    │   ├── .env
+    │   ├── .env-example
+    │   ├── batteryNotify.sh
+    │   ├── brightness.sh
+    │   ├── notify-toggle.sh
+    │   ├── open_weather.sh
+    │   ├── swayidle_status.sh
+    │   ├── swayidle_toggle.sh
+    │   └── weather.py
+    └── style.css
+</code></pre>
+
 <p>So my dotfiles are now all in a .config folder just not in my home directory. I can now run <code>stow .</code> in the dotfiles directory and all the files get placed in the correct places.</p>
 <h2><strong>Setting up a repo</strong></h2>
 <p>I could then set up a repo for this. I also added a couple of other files. One where i took all the packages ive installed so i could install everything in one line. I did this using the command <code>pacman -Qqe &gt; pkglist.txt</code> then i filtered out all the aur packages and put them into another file. These could then be installed using the command <code>sudo pacman -S --needed - &lt; pkglist.txt</code> and the same for aur just using <a href="https://aur.archlinux.org/packages/paru-bin">paru</a> or <a href="https://aur.archlinux.org/packages/yay-bin">yay</a>.</p>

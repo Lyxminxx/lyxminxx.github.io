@@ -5,6 +5,13 @@ import markdown
 import yaml
 from pathlib import Path
 from datetime import datetime, date as date_type
+from markdown import Markdown
+
+# Custom Markdown parser that disables auto-linking
+class NoAutolinkMarkdown(Markdown):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.inlinePatterns.deregister('autolink')  # removes <http://example.com> style autolinks
 
 VAULT_DIR = "/home/madelen/Documents/blog/posts"
 OUTPUT_DIR = "posts"
@@ -61,10 +68,20 @@ def convert_posts(template):
 
         title = frontmatter.get("title", "Untitled") or "Untitled"
         fixed_md = fix_obsidian_image_links(md_content or "")
-        html_content = markdown.markdown(fixed_md, extensions=["fenced_code", "codehilite"]) or ""
+
+        html_content = markdown.markdown(
+            fixed_md,
+            extensions=["fenced_code", "codehilite"],
+            extension_configs={
+                "markdown.extensions.codehilite": {
+                    "guess_lang": False,
+                    "noclasses": True  # optional, but avoids needing extra CSS
+                }
+            },
+            output_format="html5"
+        )
 
         slug = Path(filename).stem
-
         full_html = template.replace("{{title}}", title).replace("{{content}}", html_content)
 
         out_path = os.path.join(OUTPUT_DIR, f"{slug}.html")
