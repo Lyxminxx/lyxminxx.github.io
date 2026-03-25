@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="Introduction
+So today i was thinking about backing up my dotfiles. I am going to be using linux at my job so i needed an easy way of getting my system up and running. That is when I discovered an amazing tool, GNU stow.
+What is GNU stow?
+GNU stow is a symlink farmmanager gnu.org. In simpler terms this means it is an easy way of setting up symlinks. This makes it possible to have one folder with all your dotfiles, and with one command you can link them all to the right places on your system.">  
+
+  <title>
+    
+      Stow - An amazing tool for dotfiles
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.51652302d3a998bf7887aed5c2cf89141bbebdf45a2c8f87b0717a3cf4f51c4e53c694c328fb1de78c3a625a1c01f80745bf1f2f42c040647a245cbbb6c2d1d7.css" integrity="sha512-UWUjAtOpmL94h67Vws&#43;JFBu&#43;vfRaLI&#43;HsHF6PPT1HE5TxpTDKPsd54w6YlocAfgHRb8fL0LAQGR6JFy7tsLR1w==" />
+  
+</head>
+<body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+                <div class="post-meta">
+                    <a href="/">..</a>
+
+                    <p>
+                        <time datetime="2025-06-27 00:00:00 &#43;0000 UTC">
+                            2025-06-27
+                        </time>
+                    </p>
+                </div>
+
+<article>
+    <h1>Stow - An amazing tool for dotfiles</h1>
+
+    
+
+    <h2 id="introduction"><strong>Introduction</strong></h2>
+<p>So today i was thinking about backing up my dotfiles. I am going to be using linux at my job so i needed an easy way of getting my system up and running. That is when I discovered an amazing tool, GNU stow.</p>
+<h2 id="what-is-gnu-stow"><strong>What is GNU stow?</strong></h2>
+<p>GNU stow is a symlink farmmanager <a href="https://www.gnu.org/software/stow/">gnu.org</a>. In simpler terms this means it is an easy way of setting up symlinks. This makes it possible to have one folder with all your dotfiles, and with one command you can link them all to the right places on your system.</p>
+<h2 id="setting-up-stow"><strong>Setting up stow</strong></h2>
+<p>The setup process was simple enough, I made a folder with the name .config and added all files that go into .config on my system into it. Which looks something like this:</p>
+<pre tabindex="0"><code>dotfiles/.config/
+
+├── alacritty/
+│   ├── alacritty.toml
+│   └── dracula.toml
+├── fastfetch/
+│   └── config.jsonc
+├── fish/
+│   ├── completions/
+│   ├── conf.d/
+│   ├── config.fish
+│   ├── fish_variables
+│   └── functions/
+│       └── fish_prompt.fish
+├── gtk-3.0/
+│   ├── bookmarks
+│   └── settings.ini
+├── gtk-4.0/
+│   └── settings.ini
+├── mako/
+│   └── config
+├── rofi/
+│   ├── config.rasi
+│   ├── rofi-exit.sh
+│   ├── rofi-wifi-menu.sh
+│   ├── scriptLauncher.sh
+│   └── scripts/
+│       ├── calculator.sh
+│       ├── currency.sh
+│       ├── hardware.sh
+│       └── measure.sh
+├── sway/
+│   ├── autostart
+│   ├── binds
+│   ├── config
+│   ├── scripts/
+│   │   ├── display-autoset.sh
+│   │   ├── display-menu.sh
+│   │   └── songnotify.sh
+│   ├── theme
+│   └── windowRules
+├── swaylock/
+│   ├── config
+│   └── dracula-wallpaper.svg
+└── waybar/
+    ├── config
+    ├── scripts/
+    │   ├── .env
+    │   ├── .env-example
+    │   ├── batteryNotify.sh
+    │   ├── brightness.sh
+    │   ├── notify-toggle.sh
+    │   ├── open_weather.sh
+    │   ├── swayidle_status.sh
+    │   ├── swayidle_toggle.sh
+    │   └── weather.py
+    └── style.css
+</code></pre><p>So my dotfiles are now all in a .config folder just not in my home directory. I can now run <code>stow .</code> in the dotfiles directory and all the files get placed in the correct places.</p>
+<h2 id="setting-up-a-repo"><strong>Setting up a repo</strong></h2>
+<p>I could then set up a repo for this. I also added a couple of other files. One where i took all the packages I&rsquo;ve installed so i could install everything in one line. I did this using the command <code>pacman -Qqe &gt; pkglist.txt</code> then i filtered out all the aur packages and put them into another file. These could then be installed using the command <code>sudo pacman -S --needed - &lt; pkglist.txt</code> and the same for aur just using <a href="https://aur.archlinux.org/packages/paru-bin">paru</a> or <a href="https://aur.archlinux.org/packages/yay-bin">yay</a>.</p>
+<h2 id="final-thoughts"><strong>Final thoughts</strong></h2>
+<p>Stow is an awesome tool that makes organizing, backing up and sharing dotfiles so much easier. In the past I have spent so much time making scripts to do this exact thing, when stow is so much easier to keep track of. I think more people should know about this piece of software. I really think this could be super usefull for people who share their dotfiles on <a href="https://www.reddit.com/r/unixporn/">r/unixporn</a>.</p>
+
+</article>
+
+            </div>
+        </main>
+    </body></html>
