@@ -1,0 +1,24 @@
+---
+title: I quit AI for a month
+date: 2026-02-10
+draft: false
+tags:
+  - AI
+  - Dev
+---
+In August I went into the next step in my career as a developer, I started working as an apprentice.  As a lot of newer developers I was using AI a lot. I got into programming around the time ChatGPT got big. So when I started school everyone was using AI for their work. For most of the tasks I had, I could do it without AI. In some bigger tasks however it "got too complicated for me". What that meant is I was challenged. 
+
+## Being challenged
+I pride myself in being someone who loves to learn. I enjoy knowing things, and succeeding in a project is what drives me. Whatever my fixation of the week is, I want to master. So programming something is a part of that. But sometimes you hit a roadblock, something is complicated. I can't just cruise through it, just write without thinking. Those times I would tend to lean on AI. "Oh, I can't figure out how to get this text and display it like this?" I'll just ask ChatGPT for help.
+## The issue
+I found myself leaning more and more on AI. When I got an apprenticeship "I wrote" so much code. I was scared to be slow, and I wanted to succeed. However, is it really me succeeding if I used AI for it all? I found myself having a hard time explaining my code and the choices I made to the senior reviewing my code. I was asked, why did you do it like this and not like this? I could not answer.  
+## My solution
+While in the past I tried using AI "For learning" by prompting the LLM with "Do not write code, help me learn", I always fell back to copy pasting code until something worked. So I realized I had to quit it all together. No AI at all, I need to reset my brain and make it think like I used to do. So I set a goal for 2026, in the month of January I will not use AI at all to program. 
+## Starting out
+In the start I found working without AI to be hard. My speed plummeted, I felt weak. I couldn't solve problems, when I got an issue I would spend hours trying to figure it out. It was tedious, felt odd. I found myself depending more on my coworkers. Asking them for help. Them spending hours beside me explaining the fundamentals, things I felt I should know. However the truth is, I am an apprentice. I am a student, not a full developer quite yet. I am working to learn. 
+## Reading documentation and guides
+I found myself going back to doing something I only really did before AI. Now I never really programmed before AI, but what I did do is play with tech. When I learned Linux, I didn't use AI. I read docs, guides, watched YouTube videos comparing software or just showing off some window manager. In the start I found it hard to adapt to the new way of gathering information. Even after the full month I still find it hard to use, but I improved. Using docs, guides, and the help of the talented coworkers I have, I have learned. I have done things, I previously could not. 
+## Flutter
+The biggest reason I quit AI is because of my experience with flutter. When I first started working I did web development, and that I knew well already. Sure I had challenges, but I understood the core concepts. That changed :when I suddenly was put to work on a mobile app written in flutter. The way it worked was so different to what i knew. Types matter more, suddenly I have to thing about states, and what should be put where. When should I call that API request? Should it be done right away? Where is it needed? What is best practice? In the start I used AI heavily, and sure i produced code that works, but when I handed it in for review I got so many pointers that I couldn't even start to comprehend. What do you mean it should be an anonymous function instead of null? What is the difference? I started to realize that even after months I didn't even understand the basics. It felt awful, what am I doing here if I don't learn?
+## Final thoughts
+After being off AI for more than a month I have some thoughts. I feel I have learned more after quitting. I still don't really understand flutter, but I am trying, and I mean that **I** am trying. Not AI, not mindless copy pasting. I force myself to look into docs, examples and try to understand. Sometimes I get stuck, but I will ask a coworker for help. They know more than AI, because they know what is best for our use case for what we make at our company. They have tried and failed so I can learn from them. And sometimes I might spend weeks on a single issue, but every day I get just a little closer to solving it. I suppose the last thing to answer is "will i go back to using AI?" and as for now, no. I don't know if I will later on, but I like learning and feeling a sense of accomplishment for every little step I make. I like thinking.
