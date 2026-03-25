@@ -5,12 +5,12 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-# Set variables for Obsidian to Hugo copy
+# --- CONFIGURATION ---
 sourcePath="/home/madelen/Documents/obsidianVault/posts/"
-destinationPath="/home/madelen/codecave/lyxminxx.github.io/content/posts/"
-
-# Set GitHub Repo
+destinationPath="/home/madelen/codecave/lyxminxx.github.io/content/posts"
 myrepo="lyxminxx.github.io"
+deployBranch="website"
+# ---------------------
 
 # Check for required commands
 for cmd in git rsync python3 hugo; do
@@ -20,7 +20,7 @@ for cmd in git rsync python3 hugo; do
     fi
 done
 
-# Step 1: Check if Git is initialized, and initialize if necessary
+# Step 1: Initialize Git if necessary
 if [ ! -d ".git" ]; then
     echo "Initializing Git repository..."
     git init
@@ -28,86 +28,59 @@ if [ ! -d ".git" ]; then
 else
     echo "Git repository already initialized."
     if ! git remote | grep -q 'origin'; then
-        echo "Adding remote origin..."
         git remote add origin $myrepo
     fi
 fi
 
-# Step 2: Sync posts from Obsidian to Hugo content folder using rsync
+# Step 2: Sync posts from Obsidian
 echo "Syncing posts from Obsidian..."
-
-if [ ! -d "$sourcePath" ]; then
-    echo "Source path does not exist: $sourcePath"
-    exit 1
-fi
-
-if [ ! -d "$destinationPath" ]; then
-    echo "Destination path does not exist: $destinationPath"
-    exit 1
-fi
+[ ! -d "$sourcePath" ] && { echo "Source path missing"; exit 1; }
+[ ! -d "$destinationPath" ] && { echo "Destination path missing"; exit 1; }
 
 rsync -av --delete "$sourcePath" "$destinationPath"
 
-# Step 3: Process Markdown files with Python script to handle image links
-echo "Processing image links in Markdown files..."
-if [ ! -f "images.py" ]; then
-    echo "Python script images.py not found."
-    exit 1
-fi
-
-if ! python3 images.py; then
-    echo "Failed to process image links."
-    exit 1
+# Step 3: Process image links
+echo "Processing image links..."
+if [ -f "images.py" ]; then
+    python3 images.py
+else
+    echo "Warning: images.py not found, skipping processing."
 fi
 
 # Step 4: Build the Hugo site
 echo "Building the Hugo site..."
-if ! hugo; then
-    echo "Hugo build failed."
-    exit 1
-fi
+hugo --gc --minify
 
-# Step 5: Add changes to Git
-echo "Staging changes for Git..."
-if git diff --quiet && git diff --cached --quiet; then
-    echo "No changes to stage."
+# Step 5 & 6: Commit Source Files to Main
+echo "Staging and committing source changes..."
+git add .
+# Only commit if there are changes
+if ! git diff --cached --quiet; then
+    git commit -m "Source update: $(date +'%Y-%m-%d %H:%M:%S')"
+    echo "Pushing source to main..."
+    git push origin main
 else
-    git add .
+    echo "No source changes to commit."
 fi
 
-# Step 6: Commit changes with a dynamic message
-commit_message="New Blog Post on $(date +'%Y-%m-%d %H:%M:%S')"
-if git diff --cached --quiet; then
-    echo "No changes to commit."
+# Step 7: Deploy 'public' folder to GitHub Pages branch
+echo "Deploying 'public' folder to $deployBranch branch..."
+
+# Delete local temp branch if it exists
+git branch -D temp-deploy-branch 2>/dev/null || true
+
+# Use subtree split to isolate the 'public' folder into its own commit history
+git subtree split --prefix public -b temp-deploy-branch
+
+# Force push the temp branch to your remote 'website' branch
+if git push origin temp-deploy-branch:$deployBranch --force; then
+    echo "Successfully deployed to $deployBranch!"
 else
-    echo "Committing changes..."
-    git commit -m "$commit_message"
-fi
-
-# Step 7: Push all changes to the main branch
-echo "Deploying to GitHub Main..."
-if ! git push origin main; then
-    echo "Failed to push to main branch."
+    echo "Deployment failed."
     exit 1
 fi
 
-# Step 8: Push the public folder to the hostinger branch using subtree split and force push
-echo "Deploying to GitHub Hostinger..."
-if git branch --list | grep -q 'hostinger-deploy'; then
-    git branch -D hostinger-deploy
-fi
+# Cleanup local temp branch
+git branch -D temp-deploy-branch
 
-if ! git subtree split --prefix public -b hostinger-deploy; then
-    echo "Subtree split failed."
-    exit 1
-fi
-
-if ! git push origin hostinger-deploy:hostinger --force; then
-    echo "Failed to push to hostinger branch."
-    git branch -D hostinger-deploy
-    exit 1
-fi
-
-git branch -D hostinger-deploy
-
-echo "All done! Site synced, processed, committed, built, and deployed."
+echo "All done! Site is live on the $deployBranch branch."
