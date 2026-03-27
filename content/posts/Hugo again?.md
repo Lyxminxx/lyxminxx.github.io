@@ -2,7 +2,9 @@
 title: Hugo again?
 date: 2026-03-25
 draft: false
-tags: []
+tags:
+  - Dev
+  - website
 ---
 ## Introduction
 In a previous blog post I talked about building my website. I used an over complicated method of markdown to html conversion in python. The script I made was fully made my Chat gpt and was honestly just a mess. The website was pretty cool, but when I wanted to make a small change to styling I had to change it in multiple places. If my header changed I had to change it on every page. After a bit I have now moved over to Hugo, but why?

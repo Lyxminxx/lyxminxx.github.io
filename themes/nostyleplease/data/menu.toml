@@ -8,5 +8,9 @@ title = "all posts"
   show_more_url = "posts"
 
 [[entries]]
+title = "Posts by tags"
+url = "/tags"
+
+[[entries]]
 title = "rss"
 url = "index.xml"
