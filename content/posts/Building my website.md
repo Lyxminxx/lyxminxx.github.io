@@ -18,7 +18,16 @@ There were a few reasons Hugo wasn't the right fit for me. Firstly I don't reall
 ## The solution
 I then thought, what if I just replicated the process of turning markdown into html using python. I could then have a website made solely by me, with a script that makes blogging easy. First let's take a look at my markdown setup.
 
-![[Pasted image 20250629230518.png]]
+```
+---
+title: "Building My Website: The Good, the Bad, and the Markdown"
+date: 2025-06-29
+draft: false
+tags:
+  - Dev
+  - website
+---
+```
 
 As you can see I have a set of properties, these help me organize things. First is the title, this is used for the title you see before clicking on the blog post as well as at the top of the web page. Then the date is pretty self explanatory this just tells the reader when it was published. The draft checkbox is very important to my workflow. I needed a way of starting blog posts without them being published to early. For me the best solution was just that check mark. As long as that box is ticked, my script will not make it into a html document. Tags is just for me for now, but I might add tags to my blog posts in the future.
 
